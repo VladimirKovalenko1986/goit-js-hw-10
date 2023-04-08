@@ -52,13 +52,14 @@ function renderCountriesList(countries) {
       .map(country => {
         return `<li ><img src=${country.flags.svg} width="40" alt=${
           country.flags.alt
-        }></img><h1>${country.name.official}</h1><h3>Capital: <span>${
+        }></img>
+        <h1>${country.name.official}</h1><h3>Capital: <span>${
           country.capital
-        }</span></h3><h3>Population: <span>${
-          country.population
-        }</span></h3><h3>languages: <span>${Object.values(
-          country.languages
-        ).join(', ')}</span></h3></li>`;
+        }</span></h3>
+        <h3>Population: <span>${country.population}</span></h3>
+        <h3>languages: <span>${Object.values(country.languages).join(
+          ', '
+        )}</span></h3></li>`;
       })
       .join('');
     refs.countryInfo.innerHTML = markup;
@@ -66,7 +67,9 @@ function renderCountriesList(countries) {
   } else {
     markup = countries
       .map(country => {
-        return `<li class="country-element"><img src=${country.flags.svg} width="40" alt=${country.flags.alt}></img><h2>${country.name.official}</h2></li>`;
+        return `<li class="country-element">
+        <img src=${country.flags.svg} width="40" alt=${country.flags.alt}></img>
+        <h2>${country.name.official}</h2></li>`;
       })
       .join('');
     refs.countryList.innerHTML = markup;
