@@ -48,18 +48,13 @@ function renderCountriesList(countries) {
     );
     return;
   } else if (countries.length === 1) {
+    const langueg = Object.values(country.languages).join(', ');
     markup = countries
       .map(country => {
-        return `<li ><img src=${country.flags.svg} width="40" alt=${
-          country.flags.alt
-        }></img>
-        <h1>${country.name.official}</h1><h3>Capital: <span>${
-          country.capital
-        }</span></h3>
+        return `<li ><img src=${country.flags.svg} width="40" alt=${country.flags.alt}></img>
+        <h1>${country.name.official}</h1><h3>Capital: <span>${country.capital}</span></h3>
         <h3>Population: <span>${country.population}</span></h3>
-        <h3>languages: <span>${Object.values(country.languages).join(
-          ', '
-        )}</span></h3></li>`;
+        <h3>languages: <span>${langueg}</span></h3></li>`;
       })
       .join('');
     refs.countryInfo.innerHTML = markup;
