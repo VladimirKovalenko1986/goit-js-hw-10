@@ -45,6 +45,7 @@ function resolveStatus() {
   iziToast.success({
     title: 'OK',
     message: `Fulfilled promise in ${delay}ms`,
+    position: 'topRight',
   });
 }
 
@@ -52,5 +53,6 @@ function rejectStatus() {
   iziToast.error({
     title: 'Error',
     message: `Rejected promise in ${delay}ms`,
+    position: 'topRight',
   });
 }
